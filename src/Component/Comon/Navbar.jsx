@@ -1,12 +1,16 @@
-import React from "react";
-import { toast } from "react-toastify";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const Navigate = useNavigate();
-  const Hello = () => {
-    toast.success("hello");
+  const [visibal, setvisibal] = useState(false);
+
+  let handellist = () => {
+    setvisibal(!visibal);
   };
+
+  let login = false;
+  // let login = true;
 
   return (
     <div className="h-14  bg-white text-black flex justify-between pt-3 shadow-lg shadow-gray-200">
@@ -18,21 +22,42 @@ const Navbar = () => {
         <h3 onClick={() => Navigate("/About")}>About</h3>
         <h3 onClick={() => Navigate("/Contact")}>Contact</h3>
       </div>
-      <div className="mr-10 pt-1">
-        <Link
-          to="/Login"
-          className="mr-5 border-2 rounded-lg border-black p-1 px-3 font-semibold"
-        >
-          Login
-        </Link>
 
-        <Link
-          to="/UserRegistration"
-          className="mr-5 border-2 rounded-lg border-black p-1 px-3 font-semibold"
-        >
-          Register
-        </Link>
-      </div>
+      {login ? (
+        <div>
+          <button
+            className="bg-lime-500 p-2 rounded-lg w-full mr-6"
+            onClick={handellist}
+          >
+            Pankaj
+          </button>
+
+          {visibal && (
+            <ul
+              className="absolute bg-white text-black p-5 rounded-md shadow-md z-10 text-xl">
+              <li>Home</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          )}
+        </div>
+      ) : (
+        <div className="mr-10 pt-1">
+          <Link
+            to="/Login"
+            className="mr-5 border-2 rounded-lg border-black p-1 px-3 font-semibold"
+          >
+            Login
+          </Link>
+
+          <Link
+            to="/UserRegistration"
+            className="mr-5 border-2 rounded-lg border-black p-1 px-3 font-semibold"
+          >
+            Register
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

@@ -5,34 +5,37 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 const Userregistration = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phno, setphno] = useState("");
+  const [password, setpassword] = useState("");
+  const [confirmpassword, setconfirmpassword] = useState("");
 
-    const [firstName,setFirstName] = useState('');
-    const [lastName,setLastName] = useState('');
-    const [email,setEmail] = useState('');
-    const [phno,setphno] = useState('');
-    const [password,setpassword] = useState('');
-    const [confirmpassword,setconfirmpassword] = useState('');
-
-
-    const UserRefister = async(e) => {
-        e.preventDefault();
-        const data = {firstName,lastName,email,phno,password,confirmpassword};
-        await axios.post('https://sparkstoideas.daddy11.in/user/register',data)
-        .then((res) => {
-            console.log(res)
-            if(res.data.success == 1)
-                {
-                  toast.success(res.data.message)
-                }
-                else{
-                  toast.error(res.data.message)
-                }
-        })
-        .catch((err) => {
+  const UserRefister = async (e) => {
+    e.preventDefault();
+    const data = {
+      firstName,
+      lastName,
+      email,
+      phno,
+      password,
+      confirmpassword,
+    };
+    await axios
+      .post("https://sparkstoideas.daddy11.in/user/register", data)
+      .then((res) => {
+        console.log(res);
+        if (res.data.success == 1) {
+          toast.success(res.data.message);
+        } else {
+          toast.error(res.data.message);
+        }
+      })
+      .catch((err) => {
         console.log(err);
-        })
-
-    }
+      });
+  };
 
   return (
     <div className="h-screen">
@@ -122,8 +125,9 @@ const Userregistration = () => {
             <button className="flex w-full justify-end  pt-2">
               Forgat Password?
             </button>
-            <button className=" justify-center items-center w-full font-semibold text-white text-xl bg-lime-700 p-2 rounded-lg mt-2"
-            onClick={UserRefister}
+            <button
+              className=" justify-center items-center w-full font-semibold text-white text-xl bg-lime-700 p-2 rounded-lg mt-2"
+              onClick={UserRefister}
             >
               User Register
             </button>
