@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDollar,
@@ -7,16 +6,16 @@ import {
   faLocationPin,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import ContactForm from "./Contactform";
-import Foter from "./Foter";
-import Carlogo_and_text from "./Carlogo_and_text";
+import ContactForm from "../Comon/Contactform";
+import Foter from "../Comon/Foter";
+import Carlogo_and_text from "../Comon/Carlogo_and_text";
+import VenderNavbar from "./VenderNavbar";
 
-const Home = () => {
+const VenderHome = () => {
   return (
     <>
-    
-      <Navbar />
-      <div className="h-screen ">
+    <VenderNavbar/>
+        <div className="h-screen ">
         <img src="/images/Homeimage.jpg" className="w-full h-2/3" />
         <div className=" absolute z-10 justify-center p-4 bg-white border-2 rounded-lg ml-96 -mt-12 shadow-2xl">
           <input
@@ -157,7 +156,7 @@ const Home = () => {
       <Foter/>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default VenderHome

@@ -7,6 +7,10 @@ import Login from "./Component/Comon/Userlogin";
 import Signin from "./Component/Comon/Venderlogin";
 import URegister from './Component/Comon/Userregistration';
 import VRegistration from './Component/Comon/Venderregistration'
+import VenderHome from "./Component/Admin/VenderHome";
+import EditProfile from "./Component/Admin/EditProfile";
+import ChangePassword from "./Component/Admin/ChangePassword";
+
 function App() {
   return (
    <BrowserRouter>
@@ -18,6 +22,11 @@ function App() {
       <Route path="/Signup" element={<Signin/>}></Route>
       <Route path="/UserRegistration" element={<URegister/>}></Route>
       <Route path="/VenderRegistration" element={<VRegistration/>}></Route>
+      <Route path="/Vender" element={<VRegistration/>}></Route>
+      <Route path="/VH" element={<VenderHome/>}></Route>
+      <Route path="/EditProfileVender" element={<EditProfile/>}></Route>
+      <Route path="/ChangePassword" element={<ChangePassword/>}></Route>
+      
     </Routes>
    </BrowserRouter>
   );
