@@ -32,11 +32,11 @@ const VenderNavbar = () => {
           </button>
 
           {visibal && (
-            <ul className="bg-white text-black w-full  rounded-md shadow-md z-10 text-xl">
+            <ul className="bg-white absolute text-black w-full  rounded-md shadow-md z-10 text-xl">
               <Link to={'/EditProfileVender'}><li>Edit Profile</li></Link>
               <Link to={'/ChangePassword'}><li>Chane Password</li></Link>
-              <li>Ride inquiry</li>
-              <li>Add ride</li>
+              <Link to={'/Rideinquiry'}><li>Ride inquiry</li></Link>
+              <Link to={'/Addride'}><li>Add ride</li></Link>
               <li>My vehical</li>
               <li>Logout</li>
             </ul>

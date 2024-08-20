@@ -10,6 +10,8 @@ import VRegistration from './Component/Comon/Venderregistration'
 import VenderHome from "./Component/Admin/VenderHome";
 import EditProfile from "./Component/Admin/EditProfile";
 import ChangePassword from "./Component/Admin/ChangePassword";
+import Rideinquiry from "./Component/Admin/Rideinquiry";
+import AddRide from "./Component/Admin/AddRide";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
       <Route path="/VH" element={<VenderHome/>}></Route>
       <Route path="/EditProfileVender" element={<EditProfile/>}></Route>
       <Route path="/ChangePassword" element={<ChangePassword/>}></Route>
+      <Route path="/Rideinquiry" element={<Rideinquiry/>}></Route>
+      <Route path="/Addride" element={<AddRide/>}></Route>
       
     </Routes>
    </BrowserRouter>
